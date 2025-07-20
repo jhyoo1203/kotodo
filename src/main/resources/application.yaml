@@ -6,7 +6,6 @@ spring:
 
   jpa:
     database: postgresql
-    generate-ddl: true
     hibernate:
       ddl-auto: none
     show-sql: true
