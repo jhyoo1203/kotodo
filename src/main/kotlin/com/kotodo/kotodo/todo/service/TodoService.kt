@@ -27,7 +27,7 @@ class TodoService(
 
     fun update(id: Long, request: TodoUpdateRequest): Todo {
         val todo = todoJpaRepository.findById(id)
-            .orElseThrow { IllegalArgumentException("Todo ${id}가 존재하지 않습니다.") }
+            .orElseThrow { IllegalArgumentException("TodoService.update: Todo ${id}가 존재하지 않습니다.") }
 
         todo.update(
             title = request.title ?: todo.title,
