@@ -1,7 +1,7 @@
 package com.kotodo.kotodo.todo.repository
 
 import com.kotodo.kotodo.global.dto.PaginationRequest
-import com.kotodo.kotodo.todo.dto.TodoRequest
+import com.kotodo.kotodo.todo.dto.TodoSearchRequest
 import com.kotodo.kotodo.todo.model.QTodo
 import com.kotodo.kotodo.todo.model.Todo
 import com.querydsl.jpa.impl.JPAQueryFactory
@@ -10,7 +10,7 @@ class TodoRepositoryImpl(
     private val jpaQueryFactory: JPAQueryFactory
 ) : TodoRepository {
 
-    override fun search(request: TodoRequest, paginationRequest: PaginationRequest): List<Todo> {
+    override fun search(request: TodoSearchRequest, paginationRequest: PaginationRequest): List<Todo> {
         val qTodo = QTodo.todo
 
         return jpaQueryFactory
